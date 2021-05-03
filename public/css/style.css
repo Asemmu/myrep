@@ -1,0 +1,20 @@
+body{
+    background-color: #f9f9f9;
+}
+
+.form-placeholder{    padding: 20px;
+    width: 30%;
+    border: 1px solid aliceblue;
+    border-radius: 10px;}
+
+.signupform-placeholder{
+    margin: auto;
+    padding: 20px;
+    
+    border: 1px solid rgb(0 32 62);
+    border-radius: 10px;
+
+    width: 30%;
+   
+    padding: 10px;;
+}
