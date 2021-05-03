@@ -1,0 +1,10 @@
+
+<%- include('head'); %>
+<h1>Hello <%= name %> </h1>
+
+
+<div class="container-fluid">
+    <a href="/newtkt?uid=<%= id %>%name=<%= name %>"><button class="btn btn-primary">New Complaint</button></a>
+
+    <a href="/viewtkts?uid=<%= id %>"> <button class="btn btn-warning">View my complaints</button></a>
+</div>

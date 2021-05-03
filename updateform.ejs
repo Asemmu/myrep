@@ -1,0 +1,25 @@
+
+<%- include('head'); %>
+<h1>Update a ticket</h1>
+
+
+<div class="container-fluid">
+    <label for="type">Type</label>
+<input name="type" type="text" class="form-control" disabled value="<%= tkt[0].Type %>">
+<br>
+<label for="type">Type</label>
+<textarea name="type" type="text" class="form-control" disabled ><%= tkt[0].Description %></textarea>
+<br>
+<form action="updatetktstatus" method="POST">
+    <input type="hidden" name="tktid" value="<%= tkt[0].id %>">
+<label for="newstats" class="form-label">New Status</label>
+<select class="form-select" name="newsts" required>
+    <option value="">Please Select</option>
+    <option value="Resolved">Resolve</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Dismissed">Dismiss</option>
+</select>
+<br>
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>
