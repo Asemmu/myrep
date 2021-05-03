@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+    <style>
+        .form-placeholder{    padding: 20px;
+    width: 30%;
+    border: 1px solid #bdc8d2;
+    border-radius: 10px;}
+    label{font-weight: bold;}
+    </style>
+
+    <script>
+        function checkpassword(pass2)
+        {
+            pass1=document.getElementById('pass1').value;
+            console.log(pass1);
+            console.log(pass2);
+            if(pass1==pass2){
+                document.getElementById('passerr').textContent="";
+                document.getElementById('submitbtn').disabled=false;
+
+            }
+            else    {
+                document.getElementById('passerr').textContent="Your passwords does not match";
+                document.getElementById('submitbtn').disabled=true;
+
+        
+            }
+
+        }
+    </script>
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Complaints</span>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="">Home</a>
+                  <a class="nav-link" href="/login">Login</a>
+                  <a class="nav-link" href="/signup">Signup</a>
+                </div>
+              </div>
+</div>
+    </nav>
+<div class="container-fluid">
+    <h1>Complaints system</h1>
+    <hr>
+    <center>
+        <h3>Register Now</h3>
+    </center>
+    <div class="signupform-placeholder">
+        <form method="POST" action="/regsubmit">
+            <label for="name" class="form-label">Name</label>
+        
+            <input type="text"  style="display:nline"  required class="form-control" placeholder="Full Name" name="reg_Name">
+            <br>
+
+
+        <label for="email" class="form-label">Email:</label>
+        
+            <input type="email"  style="display:nline" required class="form-control" placeholder="type your email here" name="loginemail">
+            <br>
+
+            <label for="role" class="form-label">Role:</label>
+        
+            <select  style="display:nline" required class="form-select"  name="role">
+                <option value="">Please Select</option>
+                <option value="1">Customer</option>
+                <option value="2">Admin</option>
+                </select>
+            <br>
+
+        <label for="gender" class="form-label">Gender:</label>
+        
+            <input type="radio" class="form-check-input" required   name="gender" value="male">
+            <label class="form-check-label" style="font-weight:400;">Male</label>
+       
+         
+            <input type="radio" class="form-check-input" required  name="gender" value="female">
+            <label class="form-check-label" style="font-weight:400;">Female</label>
+        
+        <br>
+            <label for="password" class="form-label">Password:</label>
+        
+            <input type="password"  style="display:nline" required  class="form-control" placeholder="Password" id ="pass1" name="loginpass">
+                <span id="passerr" style="color:red;display:block;"></span>
+            <br>
+            <label for="password"   class="form-label">Repeat your password:</label>
+        
+            <input type="password" required onchange="checkpassword(this.value)"  style="display:nline" class="form-control" placeholder="Password" id="pass2" name="">
+
+            <br>
+
+            <button class="btn btn-primary" type="submit" id="submitbtn" style="width:25%;">Signup</button>
+        
+        </form>
+    </div>
+    <center>
+    <span>Already have account? <a href='/login'>Login Now</a></span>
+</center>
+    </div>
+</body>
+</html>

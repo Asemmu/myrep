@@ -1,0 +1,69 @@
+<%- include('head'); %>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.jquery.js"></script>    <!-- JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.css">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $(".chosen-select").chosen();
+                document.getElementsByClassName("chosen-container chosen-container-multi")[0].style.width="100%";
+                document.getElementsByClassName("chosen-search-input default")[0].style.width="100%";
+                document.getElementsByClassName("chosen-search-input default")[0].style.height="34px";
+                
+
+                
+            });
+        });
+    </script>
+</head>
+<center>
+    <h3>New Complaint</h3>
+</center>
+<div class="signupform-placeholder">
+    <form method="POST" action="/submitTkt">
+        <label for="name" class="form-label">Name</label>
+    
+        <input type="text"  style="display:nline"  required class="form-control" value="<%= name %>" placeholder="Full Name" name="username">
+        <br>
+<label class="form-label">Complaint type</label>
+<select name="typ" class="chosen-select" multiple>
+    <option value="Personal Issue">Personal Issue</option>
+    <option value="Technical Issue">Technical Issue</option>
+    <option value="Service Issue">Service Issue</option>
+
+    <option value="Suggestion">Suggestion</option>
+
+</select>
+<br>
+<br>
+        <label for="date" class="form-label">Complaint date</label>
+    
+        <input type="date"  style="display:nline"  required class="form-control"  placeholder="Full Name" name="comdate">
+        <br>
+
+
+        <label for="role" class="form-label">Severity:</label>
+    
+        <select  style="display:nline" required class="form-select"  name="severity">
+            <option value="">Please Select</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+            </select>
+        <br>
+
+
+        <label for="desc" class="form-label">Complaint description:</label>
+    
+        <textarea required  class="form-control" placeholder="Description"  name="compdesc"></textarea>
+            
+        <br>
+<center>
+        <button class="btn btn-success" type="submit" id="submitbtn" style="width:25%;">Submit</button>
+    
+    </center>
+    </form>
+</div>
+<center>
